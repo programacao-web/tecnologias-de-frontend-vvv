@@ -1,4 +1,9 @@
 {
+    "name": "Yet Another Ranked Pairs Electoral System",
+    "short_name": "YARPES",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "An implementation of the Ranked Pairs Electoral System developed in 1987 by Nicolaus Tideman.",
     "icons": [{
         "src": "icon.png",
         "sizes": "192x192",
