@@ -1,0 +1,40 @@
+.NavigationMenu {
+    background-color: #ecc700;
+    width: 100%;
+}
+
+.NavigationMenu--top {
+    top: 0;
+    position: fixed;
+}
+
+.NavigationMenu > ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.NavigationMenu > .NavigationMenu-links > li {
+    float: left;
+}
+
+.NavigationMenu > .NavigationMenu-links > li > a {
+    color: white;
+    text-align: center;
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.NavigationMenu--top > .NavigationMenu-links > li > a:hover {
+    background-color: #b79b05;
+}
+
+.License {
+    background-color: #ecc700;
+}
+
+.Testimony--hiden {
+    display: none;
+}
