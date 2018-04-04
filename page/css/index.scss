@@ -1,11 +1,48 @@
+// Colors
+$primary-color: #FF3859;
+$text-color: #252035;
+$link-color: #3A3E4A;
+$background-color: #f2f2f2;
+$white-color: #ffffff;
+$hidden-color: #cccccc;
+
+// Sizes
+$title-size: 18px;
+$border-radius-size: 2px;
+$small-text: 12px;
+
+// Weights
+$bold: 600px;
+
+// Others
+$box-shadow: 0 1px 2px 0 rgba(0,0,0,.24);
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+section {
+    border-radius: $border-radius-size;
+    background-color: $white-color;
+}
+
+footer {
+    text-align: center;
+    font-size: $small-text;
+}
+
 .NavigationMenu {
-    background-color: #ecc700;
+    background-color: $white-color;
     width: 100%;
+    font-weight: $bold;
+    box-shadow: $box-shadow;
 }
 
 .NavigationMenu--top {
     top: 0;
     position: fixed;
+    font-size: $title-size;
 }
 
 .NavigationMenu > ul {
@@ -19,7 +56,7 @@
 }
 
 .NavigationMenu > .NavigationMenu-links > li > a {
-    color: white;
+    color: #4a403a;
     text-align: center;
     display: block;
     text-align: center;
@@ -28,11 +65,12 @@
 }
 
 .NavigationMenu--top > .NavigationMenu-links > li > a:hover {
-    background-color: #b79b05;
+    background-color: $primary-color;
 }
 
 .License {
-    background-color: #ecc700;
+    background-color: $background-color;
+    color: $hidden-color;
 }
 
 .Testimony--hiden {
