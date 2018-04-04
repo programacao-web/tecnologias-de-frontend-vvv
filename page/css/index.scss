@@ -43,13 +43,6 @@ footer {
     font-size: $small-text;
 }
 
-.NavigationMenu {
-    background-color: $white-color;
-    width: 100%;
-    font-weight: $bold;
-    box-shadow: $box-shadow;
-}
-
 .NavigationMenu--top {
     top: 0;
     position: fixed;
@@ -58,27 +51,39 @@ footer {
     font-size: $title-size;
 }
 
-.NavigationMenu > ul {
-    list-style-type: none;
-    overflow: hidden;
-    margin: 0;
+.NavigationMenu {
+
+    background-color: $white-color;
+    width: 100%;
+    font-weight: $bold;
+    box-shadow: $box-shadow;
+
+    ul {
+        list-style-type: none;
+        overflow: hidden;
+        margin: 0;
+    }
 }
 
-.NavigationMenu > .NavigationMenu-links > li {
-    float: left;
-}
+.NavigationMenu-links {
 
-.NavigationMenu > .NavigationMenu-links > li > a {
-    color: #4a403a;
-    text-align: center;
-    display: block;
-    text-align: center;
-    padding: $paddind-size;
-    text-decoration: none;
-}
+    li {
 
-.NavigationMenu--top > .NavigationMenu-links > li > a:hover {
-    background-color: $primary-color;
+        float: left;
+
+        a {
+            color: #4a403a;
+            text-align: center;
+            display: inline-block;
+            text-align: center;
+            padding: $paddind-size;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+    }
 }
 
 .HeroImage {
