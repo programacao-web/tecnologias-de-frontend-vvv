@@ -142,3 +142,9 @@
     color: $hiddenColor;
     padding: $paddindSize;
 }
+
+@media only screen and (min-width: 768px) {
+    .HeroImage-description {
+        font-size: xx-large;
+    }
+}
