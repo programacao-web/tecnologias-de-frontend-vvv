@@ -1,0 +1,19 @@
+@import "../settings/settings";
+
+body {
+    background-color: $backgroundColor;
+    color: $textColor;
+    font-size: 14px;
+}
+
+section {
+    border-radius: $borderRadiusSize;
+    margin: 8px 8px;
+    padding: 8px;
+    background-color: $whiteColor;
+}
+
+footer {
+    text-align: center;
+    font-size: $smallText;
+}
