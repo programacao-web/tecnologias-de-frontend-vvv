@@ -10,7 +10,7 @@
 }
 
 .NavigationMenu {
-    width: 100vw;
+    width: 100%;
     font-weight: $bold;
     box-shadow: $boxShadow;
 
@@ -84,7 +84,7 @@
     text-align: center;
     flex-grow: 10;
     border-radius: $borderRadiusSize;
-    padding: $paddindSize;
+    padding: 8px;
     background-color: $whiteColor;
 }
 

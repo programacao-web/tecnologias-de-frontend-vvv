@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/*.css.map": true,
+        "**/.sass-cache/": true
+    },
+}
