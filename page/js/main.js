@@ -1,17 +1,23 @@
 window.addEventListener('DOMContentLoaded', () => {
-    let speed = 2000
+    let speed = 7000
     let currentSlide = 0
     let switcher = undefined
+    let switcherIsRunning = true
 
     let testimonials = document.querySelectorAll('.Testimony')
-    let indicators = document.querySelectorAll('.Carousel-indicators')    
+    let indicators = document.querySelectorAll('.Carousel-control-indicators')   
+    let playControl = document.querySelector('.Carousel-control-play')
+    let pauseControl = document.querySelector('.Carousel-control-pause')
    
     createSafeInterval()
 
-    function createSafeInterval(index=0) {
-        clearInterval(switcher)
-        switcher = setInterval(() => switchSlide(), speed)
+    function createSafeInterval(index=currentSlide) {
         currentSlide = index
+
+        if (switcherIsRunning) {
+            clearInterval(switcher)
+            switcher = setInterval(() => switchSlide(), speed)
+        }
     }
     
     function switchSlide() {
@@ -45,8 +51,28 @@ window.addEventListener('DOMContentLoaded', () => {
             carouselShow(index)
         }
     }
+
+    function activateCarousel() {
+        pauseControl.classList.remove('Carousel-control--hide')
+        playControl.classList.add('Carousel-control--hide')
+
+        switcherIsRunning = true
+        createSafeInterval()        
+    }
+
+    function deactivateCarousel() {
+        pauseControl.classList.add('Carousel-control--hide')
+        playControl.classList.remove('Carousel-control--hide')
+        
+        switcherIsRunning = false
+        clearInterval(switcher)
+    }
     
     for (const [index, indicator] of indicators.entries()){
         indicator.addEventListener("click", setSlide(index))
     }
+
+    playControl.addEventListener("click", activateCarousel)
+    pauseControl.addEventListener("click", deactivateCarousel)
+
 })
