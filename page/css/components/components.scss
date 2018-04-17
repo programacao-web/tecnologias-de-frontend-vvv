@@ -143,13 +143,26 @@
     padding: $paddindSize;
 }
 
-.Carousel-control {    
+.Carousel {
+  margin: 0 auto;
+  width: 15%;
+}
+
+.Carousel-control {
     cursor: pointer;
     display: inline;
+}
+
+.u-Testimonies {
+  box-shadow: 5px 5px 20px #aaaaaa;
 }
 
 @media only screen and (min-width: 768px) {
     .HeroImage-description {
         font-size: xx-large;
+    }
+
+    .Carousel {
+      width: 5%;
     }
 }

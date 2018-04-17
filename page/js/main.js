@@ -5,10 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let switcherIsRunning = true
 
     let testimonials = document.querySelectorAll('.Testimony')
-    let indicators = document.querySelectorAll('.Carousel-control-indicators')   
+    let indicators = document.querySelectorAll('.Carousel-control-indicators')
     let playControl = document.querySelector('.Carousel-control-play')
     let pauseControl = document.querySelector('.Carousel-control-pause')
-   
+
     createSafeInterval()
 
     function createSafeInterval(index=currentSlide) {
@@ -19,60 +19,35 @@ window.addEventListener('DOMContentLoaded', () => {
             switcher = setInterval(() => switchSlide(), speed)
         }
     }
-    
-    function switchSlide() {
-        for (let i = 0; i < indicators.length; i++) {
-            carouselHide(i)
-        }
 
+    function switchSlide(index) {
+        carouselHide(currentSlide)
         currentSlide = (currentSlide + 1) % 3
         carouselShow(currentSlide)
     }
 
     function carouselHide(index) {
+        $('.Testimony').eq(index).fadeOut("slow")
         testimonials[index].classList.add('Testimony--hiden')
         indicators[index].checked = false
     }
-    
+
     function carouselShow(index) {
+        $('.Testimony').eq(index).fadeIn("slow")
         indicators[index].checked = true
         testimonials[index].classList.remove('Testimony--hiden')
     }
 
     function setSlide(index) {
         return () => {
-            for (let i = 0; i < indicators.length; i++) {
-                indicators[i].setAttribute('data-state', '')
-                testimonials[i].setAttribute('data-state', '')
-    
-                carouselHide(i)
-            }
-            createSafeInterval(index)
-            carouselShow(index)
+            carouselHide(currentSlide)
+            currentSlide = index
+            carouselShow(currentSlide)
         }
     }
 
-    function activateCarousel() {
-        pauseControl.classList.remove('Carousel-control--hide')
-        playControl.classList.add('Carousel-control--hide')
-
-        switcherIsRunning = true
-        createSafeInterval()        
-    }
-
-    function deactivateCarousel() {
-        pauseControl.classList.add('Carousel-control--hide')
-        playControl.classList.remove('Carousel-control--hide')
-        
-        switcherIsRunning = false
-        clearInterval(switcher)
-    }
-    
     for (const [index, indicator] of indicators.entries()){
         indicator.addEventListener("click", setSlide(index))
     }
-
-    playControl.addEventListener("click", activateCarousel)
-    pauseControl.addEventListener("click", deactivateCarousel)
 
 })
