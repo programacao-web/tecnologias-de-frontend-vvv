@@ -3,3 +3,12 @@
 .Testimony--hiden {
     display: none !important;
 }
+
+.Carousel-control--hide {
+    display: none !important;
+}
+
+.Carousel-indicators--active {
+    background-color: $primaryColor !important;
+    opacity: 1 !important;
+}

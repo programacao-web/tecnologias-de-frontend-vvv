@@ -1,0 +1,27 @@
+{
+  "name": "yarpes",
+  "version": "0.1.0",
+  "description": "An implementation of the Ranked Pairs Electoral System developed in 1987 by Nicolaus Tideman",
+  "main": "page/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server page -o",
+    "sass": "sass page/css/index.scss:page/css/index.min.css --style compressed --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programacao-web/tecnologias-de-frontend-vvv.git"
+  },
+  "keywords": [
+    "electoral system"
+  ],
+  "author": "Eduardo Vital, Victor Navarro",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/programacao-web/tecnologias-de-frontend-vvv/issues"
+  },
+  "homepage": "https://github.com/programacao-web/tecnologias-de-frontend-vvv#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
